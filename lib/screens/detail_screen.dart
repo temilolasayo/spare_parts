@@ -9,15 +9,57 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
+      elevation: 0,
       backgroundColor: const Color(0xff453885),
-      padding: const EdgeInsets.only(left: 50, right: 50),
+      padding: const EdgeInsets.only(left: 60, right: 60),
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(2)),
+        borderRadius: BorderRadius.all(Radius.circular(13)),
       ),
     );
 
     return Scaffold(
+      bottomSheet:      Padding(
+                    padding: const EdgeInsets.only(left: 20.0, bottom: 10.0, right: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SparePartApp()))
+                          },
+                          child: const Card(
+                                      shadowColor:  Color.fromRGBO(0, 0, 0, 0.08),
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(13)),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(
+                                Icons.arrow_back_rounded,
+                                size: 50.0,
+                                color: Color(0xff453885),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: raisedButtonStyle,
+                          child: const Padding(
+                            padding: EdgeInsets.all(25.0),
+                            child: Text('Buy now'),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+      
       appBar: AppBar(
+        elevation: 0,
         title: Text(
           productDetail.productName,
           style: const TextStyle(fontFamily: 'Gotham', fontSize: 15.0),
@@ -35,7 +77,52 @@ class DetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
+//          bottomNavigationBar: BottomAppBar(
+//         shape: CircularNotchedRectangle(),
+// child:  Padding(
+//                     padding: const EdgeInsets.only(top: 30.0, bottom: 20.0),
+//                     child: Row(
+//                       mainAxisSize: MainAxisSize.max,
+//                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                       children: [
+//                         GestureDetector(
+//                           onTap: () => {
+//                             Navigator.push(
+//                                 context,
+//                                 MaterialPageRoute(
+//                                     builder: (context) => const SparePartApp()))
+//                           },
+//                           child: const Card(
+//                                       shadowColor:  Color.fromRGBO(0, 0, 0, 0.08),
+//                             shape: RoundedRectangleBorder(
+//                               borderRadius:
+//                                   BorderRadius.all(Radius.circular(13)),
+//                             ),
+//                             child: Padding(
+//                               padding: EdgeInsets.all(8.0),
+//                               child: Icon(
+//                                 Icons.arrow_back_rounded,
+//                                 size: 50.0,
+//                                 color: Color(0xff453885),
+//                               ),
+//                             ),
+//                           ),
+//                         ),
+//                         ElevatedButton(
+//                           onPressed: () {},
+//                           style: raisedButtonStyle,
+//                           child: const Padding(
+//                             padding: EdgeInsets.all(25.0),
+//                             child: Text('Buy now'),
+//                           ),
+//                         )
+//                       ],
+//                     ),
+//                   ),
+              
+//       ),
+  
+   body: Column(
         children: [
           Container(
               color: Color(int.parse(productDetail.cardColor)),
@@ -83,9 +170,12 @@ class DetailScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 12.0),
                         ),
-                        Text(productDetail.sparePartType,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 12.0)),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(productDetail.sparePartType,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12.0)),
+                        ),
                       ],
                     ),
                   ),
@@ -97,9 +187,12 @@ class DetailScreen extends StatelessWidget {
                         child: Text(
                           'Description',
                           style: TextStyle(
-                              color: Color(0xff9A9A9A),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12.0),
+                            color: Color(0xff9A9A9A),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 10.0,
+                            fontFamily: "Gotham",
+                            height: 2,
+                          ),
                         ),
                       ),
                     ],
@@ -107,57 +200,7 @@ class DetailScreen extends StatelessWidget {
                   Text(productDetail.descriptionList,
                       style: const TextStyle(
                           fontWeight: FontWeight.w200, fontSize: 18.0)),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0, top: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Type',
-                          style: TextStyle(
-                              color: Color(0xff9A9A9A),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12.0),
-                        ),
-                        Text(productDetail.sparePartType,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 12.0)),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                          onTap: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const SparePartApp()))
-                          },
-                          child: const Icon(
-                            Icons.arrow_back,
-                            size: 50.0,
-                            color: Color(0xff453885),
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            
-                          },
-                          style: raisedButtonStyle,
-                          child: const Padding(
-                            padding: EdgeInsets.all(25.0),
-                            child: Text('Buy now'),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+              ],
               ),
             ),
           ),
