@@ -46,7 +46,7 @@ class Home extends StatelessWidget {
       cardColor: "0xffdbd6ff",
       sparePartType: "Gear Mechanism",
       descriptionList:
-          " Ball joints of your front suspension provide pivoting movement between the steering knuckles and control arms to provide a safe and smooth ride.",
+          "Ball joints of your front suspension provide pivoting movement between the steering knuckles and control arms to provide a safe and smooth ride.",
     ),
   ];
 

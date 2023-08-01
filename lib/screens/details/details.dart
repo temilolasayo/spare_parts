@@ -32,18 +32,25 @@ class DetailScreen extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const SparePartApp()))
               },
-              child: const Card(
-                shadowColor: Color.fromRGBO(0, 0, 0, 0.08),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(13)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.arrow_back_rounded,
-                    size: 50.0,
-                    color: Color(0xff453885),
+              child: Container(
+                padding: const EdgeInsets.only(left: 20.0, top: 8.0, right: 20.0, bottom: 8.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(13),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.arrow_back_rounded,
+                  size: 50.0,
+                  color: Color(0xff453885),
                 ),
               ),
             ),
@@ -61,26 +68,30 @@ class DetailScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-         Container(
-           padding: const EdgeInsets.only(left: 20.0,top: 10.0, right: 20.0),
-                color: Color(int.parse(productDetail.cardColor)),
-           child: Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: [
-               Text(
-                 productDetail.productName,
-                 style: const TextStyle(
-                     fontSize: 20.0,
-                     fontFamily: 'Roboto',
-                     fontWeight: FontWeight.bold,
-                     color: Color.fromRGBO(69, 56, 133, 1),),
-               ),
-         SvgPicture.asset("assets/svgs/bookmark.svg",
-                width: 15.0,
-                height: 15.0,)
-             ],
-           ),
-         ),
+            Container(
+              padding:
+                  const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0),
+              color: Color(int.parse(productDetail.cardColor)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    productDetail.productName,
+                    style: const TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(69, 56, 133, 1),
+                    ),
+                  ),
+                  SvgPicture.asset(
+                    "assets/svgs/bookmark.svg",
+                    width: 15.0,
+                    height: 15.0,
+                  )
+                ],
+              ),
+            ),
             Container(
                 color: Color(int.parse(productDetail.cardColor)),
                 child: Expanded(
@@ -131,7 +142,8 @@ class DetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 10.0),
                             child: Text(productDetail.sparePartType,
                                 style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 12.0)),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.0)),
                           ),
                         ],
                       ),
@@ -143,7 +155,7 @@ class DetailScreen extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 20.0),
                           child: Text(
                             'Description',
-                            style:TextStyle(
+                            style: TextStyle(
                               color: Color.fromRGBO(154, 154, 154, 1),
                               fontWeight: FontWeight.bold,
                               fontSize: 10.0,
@@ -156,8 +168,10 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Text(productDetail.descriptionList,
                         style: const TextStyle(
-                          fontFamily: "Gotham",
-                            fontWeight: FontWeight.w200, fontSize: 15.0, height: 2.0)),
+                            fontFamily: "Gotham",
+                            fontWeight: FontWeight.w200,
+                            fontSize: 15.0,
+                            height: 2.0)),
                   ],
                 ),
               ),
