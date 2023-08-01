@@ -79,7 +79,7 @@ class DetailScreen extends StatelessWidget {
                     productDetail.productName,
                     style: const TextStyle(
                       fontSize: 20.0,
-                      fontFamily: 'Roboto',
+                      fontFamily: 'Gotham',
                       fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(69, 56, 133, 1),
                     ),
@@ -92,15 +92,15 @@ class DetailScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-                color: Color(int.parse(productDetail.cardColor)),
-                child: Expanded(
+            Expanded(
+              child: Container(
+                  color: Color(int.parse(productDetail.cardColor)),
                   child: Image(
                     image: AssetImage(productDetail.imageUrl),
                     width: 500,
-                    height: 400,
-                  ),
-                )),
+                    height: 350,
+                  )),
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -114,8 +114,8 @@ class DetailScreen extends StatelessWidget {
                           Text(
                             productDetail.productPrice,
                             style: const TextStyle(
-                                fontSize: 32.0,
-                                fontFamily: 'Roboto',
+                                fontSize: 30.0,
+                                fontFamily: 'Gotham',
                                 fontWeight: FontWeight.bold),
                           ),
                           Image(
@@ -171,7 +171,7 @@ class DetailScreen extends StatelessWidget {
                             fontFamily: "Gotham",
                             fontWeight: FontWeight.w200,
                             fontSize: 15.0,
-                            height: 2.0)),
+                            height: 1.5)),
                   ],
                 ),
               ),
