@@ -106,7 +106,6 @@ class Home extends StatelessWidget {
               right: 16.0,
               top: 16.0,
             ),
-            // physics: const NeverScrollableScrollPhysics(),
             children: [
               ...productList,
             ],

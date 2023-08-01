@@ -62,7 +62,7 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           children: [
          Container(
-           padding: const EdgeInsets.only(left: 10.0,top: 10.0, right: 10.0),
+           padding: const EdgeInsets.only(left: 20.0,top: 10.0, right: 20.0),
                 color: Color(int.parse(productDetail.cardColor)),
            child: Row(
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,7 +72,8 @@ class DetailScreen extends StatelessWidget {
                  style: const TextStyle(
                      fontSize: 20.0,
                      fontFamily: 'Roboto',
-                     fontWeight: FontWeight.bold),
+                     fontWeight: FontWeight.bold,
+                     color: Color.fromRGBO(69, 56, 133, 1),),
                ),
          SvgPicture.asset("assets/svgs/bookmark.svg",
                 width: 15.0,
@@ -86,7 +87,7 @@ class DetailScreen extends StatelessWidget {
                   child: Image(
                     image: AssetImage(productDetail.imageUrl),
                     width: 500,
-                    height: 340,
+                    height: 400,
                   ),
                 )),
             Expanded(
@@ -108,8 +109,8 @@ class DetailScreen extends StatelessWidget {
                           ),
                           Image(
                             image: AssetImage(productDetail.iconImageUrl),
-                            width: 28.0,
-                            height: 35.0,
+                            width: 25.0,
+                            height: 25.0,
                           ),
                         ],
                       ),
@@ -142,8 +143,8 @@ class DetailScreen extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 20.0),
                           child: Text(
                             'Description',
-                            style: TextStyle(
-                              color: Color(0xff9A9A9A),
+                            style:TextStyle(
+                              color: Color.fromRGBO(154, 154, 154, 1),
                               fontWeight: FontWeight.bold,
                               fontSize: 10.0,
                               fontFamily: "Gotham",
@@ -155,7 +156,8 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Text(productDetail.descriptionList,
                         style: const TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 18.0)),
+                          fontFamily: "Gotham",
+                            fontWeight: FontWeight.w200, fontSize: 15.0, height: 2.0)),
                   ],
                 ),
               ),
