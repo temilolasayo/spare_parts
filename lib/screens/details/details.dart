@@ -114,8 +114,8 @@ class DetailScreen extends StatelessWidget {
                           Text(
                             productDetail.productPrice,
                             style: const TextStyle(
-                                fontSize: 30.0,
-                                fontFamily: 'Gotham',
+                                fontSize: 25.0,
+                                fontFamily: '',
                                 fontWeight: FontWeight.bold),
                           ),
                           Image(

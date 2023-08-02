@@ -105,7 +105,9 @@ class ProductDetail extends StatelessWidget {
                           Text(
                             productPrice,
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18.0),
+                                fontWeight: FontWeight.bold, 
+                                fontSize: 18.0, 
+                                fontFamily: ''),
                           ),
                           const SizedBox(
                             width: 30.0,
@@ -147,3 +149,4 @@ class ProductDetail extends StatelessWidget {
     );
   }
 }
+
